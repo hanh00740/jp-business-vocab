@@ -1,0 +1,17 @@
+{
+  "name": "ビジネス日本語 語彙帳",
+  "short_name": "語彙帳",
+  "description": "Sổ tay biểu đạt business tiếng Nhật — học mọi lúc trên điện thoại.",
+  "start_url": "./index.html",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#F4F5F7",
+  "theme_color": "#1C3A6B",
+  "lang": "vi",
+  "icons": [
+    { "src": "icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
+    { "src": "icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" },
+    { "src": "icon-maskable.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+  ]
+}
