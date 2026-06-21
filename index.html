@@ -83,6 +83,7 @@
   .lv-adv{background:var(--ai-wash);color:var(--ai-deep);} .lv-midb{background:var(--matsu-wash);color:var(--matsu);}
   .mine{font-size:10px;font-weight:600;padding:3px 7px;border-radius:99px;background:var(--shu-wash);color:var(--shu);}
   .vi{font-size:14px;color:var(--sumi);margin:9px 0 0;}
+  .hv{font-size:12px;color:var(--shu);font-style:italic;margin-top:3px;letter-spacing:.02em;}
   .ex{font-family:var(--jp-sans);font-size:13.5px;color:var(--sumi);line-height:1.7;background:var(--line-soft);border-radius:var(--radius-sm);padding:9px 12px;margin-top:11px;}
   .note{display:flex;gap:7px;font-size:12.5px;color:var(--shu);background:var(--shu-wash);border-radius:var(--radius-sm);padding:8px 11px;margin-top:9px;line-height:1.55;}
   .row-btns{display:flex;gap:8px;margin-top:13px;flex-wrap:wrap;}
@@ -258,7 +259,7 @@ function renderList(){
     const lvBadge=d.l==="中級"?`<span class="lv lv-midb">中級</span>`:`<span class="lv lv-adv">上級</span>`;
     const mine=d.custom?`<span class="mine">của tôi</span>`:"";
     return `<div class="card ${lvClass} ${done?"done":""}">
-      <div class="card-top"><div><div class="yomi">${esc(d.y)}</div><div class="jp">${esc(d.jp)}</div></div>
+      <div class="card-top"><div><div class="yomi">${esc(d.y)}</div><div class="jp">${esc(d.jp)}</div>${d.hv?'<div class="hv">漢越 '+esc(d.hv)+'</div>':''}</div>
       <div class="badges">${mine}${lvBadge}</div></div>
       <p class="vi">${esc(d.vi)}</p>
       ${d.ex?`<div class="ex">${esc(d.ex)}</div>`:""}
@@ -288,7 +289,7 @@ function renderFlash(){
     if(state.dir==="jp2vi") face=`<div class="fc-yomi">${esc(d.y)}</div><div class="fc-jp">${esc(d.jp)}</div><div class="fc-hint">Chạm để xem nghĩa →</div>`;
     else face=`<div class="fc-vi">${esc(d.vi)}</div><div class="fc-cat">${CATS[d.c].jp}</div><div class="fc-hint">Nhớ ra tiếng Nhật? Chạm để kiểm tra →</div>`;
   }else{
-    face=`<div class="fc-yomi">${esc(d.y)}</div><div class="fc-jp">${esc(d.jp)}</div><div class="fc-divider"></div><div class="fc-vi" style="font-size:15px;color:var(--sumi-soft);margin-bottom:10px;">${esc(d.vi)}</div>${d.ex?`<div class="fc-ex">${esc(d.ex)}</div>`:""}${d.n?`<div class="fc-note">⚠ ${esc(d.n)}</div>`:""}`;
+    face=`<div class="fc-yomi">${esc(d.y)}</div><div class="fc-jp">${esc(d.jp)}</div>${d.hv?'<div class="hv" style="margin-top:6px;">漢越 '+esc(d.hv)+'</div>':''}<div class="fc-divider"></div><div class="fc-vi" style="font-size:15px;color:var(--sumi-soft);margin-bottom:10px;">${esc(d.vi)}</div>${d.ex?`<div class="fc-ex">${esc(d.ex)}</div>`:""}${d.n?`<div class="fc-note">⚠ ${esc(d.n)}</div>`:""}`;
   }
   v.innerHTML=`<div class="flash-stage">
     <div class="flash-meta">${state.idx+1} / ${state.deck.length} ${done?" · ✓ đã thuộc":""}</div>
