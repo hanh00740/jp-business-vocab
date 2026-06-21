@@ -106,6 +106,7 @@
   .fc-divider{height:1px;background:var(--line);width:60%;margin:16px auto;}
   .fc-ex{font-family:var(--jp-sans);font-size:14.5px;color:var(--sumi);line-height:1.7;}
   .fc-note{font-size:12px;color:var(--shu);margin-top:12px;line-height:1.5;}
+  .expl{margin-top:9px;} .expl summary{cursor:pointer;list-style:none;color:var(--ai);font-weight:600;font-size:12px;font-family:var(--ui);user-select:none;display:inline-block;} .expl summary::-webkit-details-marker{display:none;} .expl summary::before{content:"▸ ";font-size:10px;} .expl[open] summary::before{content:"▾ ";} .expl .expl-body{margin-top:7px;background:var(--ai-wash);border-radius:var(--radius-sm);padding:10px 12px;font-size:13px;line-height:1.7;color:var(--sumi);}
   .flash-actions{display:flex;gap:12px;width:100%;max-width:520px;}
   .fa{flex:1;font-family:var(--ui);font-size:14px;font-weight:600;padding:13px;border-radius:14px;cursor:pointer;border:1px solid;transition:.15s;}
   .fa-again{background:var(--surface);border-color:var(--line);color:var(--sumi-soft);} .fa-again:hover{border-color:var(--shu);color:var(--shu);}
@@ -263,6 +264,7 @@ function renderList(){
       <div class="badges">${mine}${lvBadge}</div></div>
       <p class="vi">${esc(d.vi)}</p>
       ${d.ex?`<div class="ex">${esc(d.ex)}</div>`:""}
+      ${d.expl?`<details class="expl"><summary>💡 Giải thích</summary><div class="expl-body">${esc(d.expl)}</div></details>`:""}
       ${d.n?`<div class="note"><b>⚠</b><span>${esc(d.n)}</span></div>`:""}
       <div class="row-btns">
         <button class="learn-btn" data-id="${d.id}">${done?`<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg> Đã thuộc`:`Đánh dấu đã thuộc`}</button>
@@ -289,7 +291,7 @@ function renderFlash(){
     if(state.dir==="jp2vi") face=`<div class="fc-yomi">${esc(d.y)}</div><div class="fc-jp">${esc(d.jp)}</div><div class="fc-hint">Chạm để xem nghĩa →</div>`;
     else face=`<div class="fc-vi">${esc(d.vi)}</div><div class="fc-cat">${CATS[d.c].jp}</div><div class="fc-hint">Nhớ ra tiếng Nhật? Chạm để kiểm tra →</div>`;
   }else{
-    face=`<div class="fc-yomi">${esc(d.y)}</div>${d.hv?'<div class="hv" style="margin-bottom:6px;">'+esc(d.hv)+'</div>':''}<div class="fc-jp">${esc(d.jp)}</div><div class="fc-divider"></div><div class="fc-vi" style="font-size:15px;color:var(--sumi-soft);margin-bottom:10px;">${esc(d.vi)}</div>${d.ex?`<div class="fc-ex">${esc(d.ex)}</div>`:""}${d.n?`<div class="fc-note">⚠ ${esc(d.n)}</div>`:""}`;
+    face=`<div class="fc-yomi">${esc(d.y)}</div>${d.hv?'<div class="hv" style="margin-bottom:6px;">'+esc(d.hv)+'</div>':''}<div class="fc-jp">${esc(d.jp)}</div><div class="fc-divider"></div><div class="fc-vi" style="font-size:15px;color:var(--sumi-soft);margin-bottom:10px;">${esc(d.vi)}</div>${d.ex?`<div class="fc-ex">${esc(d.ex)}</div>`:""}${d.expl?`<details class="expl"><summary>💡 Giải thích</summary><div class="expl-body">${esc(d.expl)}</div></details>`:""}${d.n?`<div class="fc-note">⚠ ${esc(d.n)}</div>`:""}`;
   }
   v.innerHTML=`<div class="flash-stage">
     <div class="flash-meta">${state.idx+1} / ${state.deck.length} ${done?" · ✓ đã thuộc":""}</div>
