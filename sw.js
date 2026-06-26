@@ -1,5 +1,5 @@
 // Cache app shell so it works offline (subway, no signal). Bump CACHE when you redeploy.
-const CACHE = "jpbiz-v6";
+const CACHE = "jpbiz-v7";
 const ASSETS = [
   "./",
   "./index.html",
