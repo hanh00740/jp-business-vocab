@@ -31,6 +31,7 @@ window.VOCAB_CATS = {
   koji:      {jp:"故事成語",   vi:"Điển cố TQ"},
   goyou:     {jp:"誤用注意",   vi:"Dễ dùng sai"},
   keigong:   {jp:"敬語の誤り", vi:"Lỗi kính ngữ"},
+  onoma:     {jp:"オノマトペ", vi:"Tượng thanh"},
 };
 
 window.VOCAB_DATA = [
@@ -523,5 +524,38 @@ window.VOCAB_DATA = [
   {c:"keigong",l:"上級",jp:"各位様",y:"かくいさま",vi:"✕ Thừa kính — đúng: 各位",ex:"○ 関係者各位",hv:"các vị",expl:"各位 tự thân đã hàm ý kính với từng người; thêm 様 hay 殿 thành thừa. Chỉ viết 各位 (hoặc 〜の皆様)."},
   {c:"keigong",l:"上級",jp:"御中と様の併用",y:"おんちゅうとさまのへいよう",vi:"✕ Không dùng 御中 và 様 cùng lúc — chọn một",ex:"○ 株式会社ABC 御中 ／ ○ 〜営業部 田中様",expl:"御中 dùng cho tổ chức (không chỉ đích danh ai); 様 dùng cho cá nhân. Gửi công ty thì 御中; gửi đích danh người thì 〜株式会社 営業部 田中様 (bỏ 御中)."},
   {c:"keigong",l:"上級",jp:"させていただきます（乱用）",y:"させていただきます",vi:"△ Lạm dụng — chỉ dùng khi cần phép/được lợi; nếu không, dùng 〜いたします",ex:"○ 担当させていただきます ／ ✕ 閉店させていただきます → 閉店いたします",expl:"させていただく đúng khi (1) có sự cho phép của đối phương và (2) mình được lợi. Việc đơn phương (đóng cửa, gửi mail) thì dùng 〜いたします cho gọn, tự nhiên hơn."},
+
+  // ---- batch 7: yoji + proverb + onomatopoeia ----
+  {c:"yoji",l:"上級",jp:"因果応報",y:"いんがおうほう",vi:"Nhân quả báo ứng — gieo nhân nào gặt quả nấy",ex:"因果応報、彼の今の苦境は自業自得とも言える。",hv:"nhân quả ứng báo",expl:"因(nhân)果(quả)応報 = việc thiện ác đều có quả báo tương ứng. Gốc nhà Phật."},
+  {c:"yoji",l:"上級",jp:"自業自得",y:"じごうじとく",vi:"Tự làm tự chịu (thường nghĩa xấu: gieo gió gặt bão)",ex:"練習を怠った結果だから、自業自得だ。",hv:"tự nghiệp tự đắc",expl:"自(mình)業(nghiệp)自得 = nghiệp mình tạo thì mình nhận lấy. Gốc nhà Phật."},
+  {c:"yoji",l:"上級",jp:"大器晩成",y:"たいきばんせい",vi:"Tài lớn thành đạt muộn màng",ex:"焦らなくていい、大器晩成型の人もいる。",hv:"đại khí vãn thành",expl:"大器(đồ lớn)晩成 = vật lớn thì hoàn thành muộn. Người tài lớn thường nên nghiệp muộn. Gốc Lão Tử (Đạo Đức Kinh)."},
+  {c:"yoji",l:"上級",jp:"油断大敵",y:"ゆだんたいてき",vi:"Chớ chủ quan — lơ là chính là kẻ địch lớn",ex:"順調でも油断大敵、最後まで気を抜くな。",hv:"du đoạn đại địch",expl:"油断(lơ là)大敵 = sự lơ là chính là kẻ địch lớn nhất. Mất cảnh giác là hỏng."},
+  {c:"yoji",l:"上級",jp:"言語道断",y:"ごんごどうだん",vi:"Không thể chấp nhận, tệ đến hết chỗ nói",ex:"無断で公開するとは言語道断だ。",hv:"ngôn ngữ đạo đoạn",expl:"言語道断 = lời nói và con đường diễn đạt đều đứt → tệ/sai đến mức không còn lời nào. Gốc nhà Phật (cảnh giới vượt ngôn từ)."},
+  {c:"yoji",l:"上級",jp:"単刀直入",y:"たんとうちょくにゅう",vi:"Đi thẳng vào vấn đề, không vòng vo",ex:"単刀直入に申し上げます。",hv:"đơn đao trực nhập",expl:"単刀(một đao)直入 = cầm một thanh đao xông thẳng vào. Vào ngay vấn đề chính."},
+  {c:"yoji",l:"上級",jp:"一網打尽",y:"いちもうだじん",vi:"Bắt gọn một mẻ, tóm trọn toàn bộ",ex:"不正を一網打尽にする。",hv:"nhất võng đả tận",expl:"一網(một lưới)打尽 = một mẻ lưới bắt sạch. Tóm gọn toàn bộ (tội phạm, đối thủ) trong một lần."},
+  {c:"yoji",l:"上級",jp:"疑心暗鬼",y:"ぎしんあんき",vi:"Đa nghi sinh ma — đã ngờ thì cái gì cũng thành đáng sợ",ex:"疑心暗鬼になって、皆を信じられなくなった。",hv:"nghi tâm ám quỷ",expl:"疑心(lòng nghi)暗鬼 = lòng nghi sinh ra quỷ trong bóng tối. Một khi đã nghi thì tự dọa mình."},
+  {c:"yoji",l:"上級",jp:"危機一髪",y:"ききいっぱつ",vi:"Ngàn cân treo sợi tóc, trong gang tấc",ex:"危機一髪のところで間に合った。",hv:"nguy cơ nhất phát",expl:"危機 cách nhau một sợi tóc (一髪) = nguy hiểm sát đến cực điểm. Lưu ý chữ 髪 (tóc), không phải 発."},
+  {c:"yoji",l:"上級",jp:"優柔不断",y:"ゆうじゅうふだん",vi:"Do dự, thiếu quyết đoán",ex:"優柔不断で、なかなか決められない。",hv:"ưu nhu bất đoạn",expl:"優柔(mềm yếu)不断(không quyết) = lưỡng lự mãi không quyết được. Sắc thái chê."},
+  {c:"proverb",l:"中級",jp:"猿も木から落ちる",y:"さるもきからおちる",vi:"Khỉ cũng ngã cây — người tài giỏi cũng có lúc sai sót",ex:"ベテランでもミスはする、猿も木から落ちるさ。",hv:"viên mộc lạc",expl:"Khỉ leo cây giỏi vậy mà cũng có lúc ngã. Người tài đến đâu cũng có lúc thất bại. Cùng nghĩa: 弘法も筆の誤り, 河童の川流れ."},
+  {c:"proverb",l:"中級",jp:"石の上にも三年",y:"いしのうえにもさんねん",vi:"Có công kiên trì, nhẫn nại lâu rồi sẽ thành",ex:"石の上にも三年、もう少し続けてみよう。",hv:"thạch thượng tam niên",expl:"Ngồi mãi trên hòn đá lạnh ba năm thì đá cũng ấm. Kiên trì lâu dài rồi sẽ có kết quả; đừng bỏ cuộc sớm."},
+  {c:"proverb",l:"中級",jp:"塵も積もれば山となる",y:"ちりもつもればやまとなる",vi:"Tích tiểu thành đại — góp nhặt từng chút thành lớn",ex:"毎日10分でも、塵も積もれば山となる。",hv:"trần tích sơn",expl:"Bụi nhỏ chất mãi cũng thành núi. Góp từng chút nhỏ lâu dần thành thứ lớn."},
+  {c:"proverb",l:"中級",jp:"能ある鷹は爪を隠す",y:"のうあるたかはつめをかくす",vi:"Người thực tài không khoe khoang",ex:"彼は能ある鷹は爪を隠すタイプだ。",hv:"năng ưng trảo ẩn",expl:"Con ưng giỏi (能ある鷹) giấu móng vuốt (爪). Người có thực lực thì kín đáo, không phô trương."},
+  {c:"proverb",l:"中級",jp:"立つ鳥跡を濁さず",y:"たつとりあとをにごさず",vi:"Ra đi để lại sạch sẽ, gọn gàng (nghỉ việc đàng hoàng)",ex:"退職時は立つ鳥跡を濁さず、引き継ぎを丁寧に。",hv:"lập điểu tích trọc",expl:"Con chim bay đi không làm vẩn đục mặt nước nơi nó đậu. Khi rời đi nên thu xếp chu đáo, để lại ấn tượng đẹp."},
+  {c:"proverb",l:"中級",jp:"七転び八起き",y:"ななころびやおき",vi:"Ngã bảy lần dậy tám lần — kiên cường bất khuất",ex:"七転び八起きの精神で再挑戦する。",hv:"thất chuyển bát khởi",expl:"Dù thất bại bao nhiêu lần vẫn đứng dậy làm lại. Tinh thần không gục ngã."},
+  {c:"onoma",l:"中級",jp:"ざっくり",y:"ざっくり",vi:"Đại khái, sơ bộ, chưa đi vào chi tiết",ex:"まずはざっくり全体像を説明します。",expl:"Nói/làm ở mức tổng quát, chưa chi tiết. Trái với しっかり／きっちり. ざっくり言うと = nói nôm na thì."},
+  {c:"onoma",l:"中級",jp:"しっかり",y:"しっかり",vi:"Chắc chắn, kỹ lưỡng, vững vàng",ex:"内容をしっかり確認してください。"},
+  {c:"onoma",l:"中級",jp:"きっちり",y:"きっちり",vi:"Chính xác, khít khao, đâu ra đó",ex:"スケジュールをきっちり守る。",expl:"Nhấn sự chính xác, không xê dịch (giờ giấc, con số). Gần きちんと nhưng nghiêng về độ khít."},
+  {c:"onoma",l:"中級",jp:"きちんと",y:"きちんと",vi:"Chỉn chu, ngăn nắp, đúng quy củ",ex:"報告書をきちんと提出する。"},
+  {c:"onoma",l:"中級",jp:"てきぱき",y:"てきぱき",vi:"Nhanh gọn, dứt khoát (xử lý việc)",ex:"仕事をてきぱきこなす。"},
+  {c:"onoma",l:"中級",jp:"こつこつ",y:"こつこつ",vi:"Cần mẫn, đều đặn từng chút một",ex:"毎日こつこつ続けることが大事だ。"},
+  {c:"onoma",l:"中級",jp:"どんどん",y:"どんどん",vi:"Ào ào, liên tục, dồn dập (tiến nhanh)",ex:"意見をどんどん出してください。"},
+  {c:"onoma",l:"中級",jp:"バタバタ",y:"バタバタ",vi:"Tất bật, bận rối rít",ex:"朝からずっとバタバタしています。",expl:"Bận đến mức luống cuống, chạy đôn đáo. 「バタバタしていて返信が遅れました」rất hay dùng để xin lỗi vì bận."},
+  {c:"onoma",l:"中級",jp:"ぎりぎり",y:"ぎりぎり",vi:"Sát nút, vừa kịp (mức tới hạn)",ex:"締切ぎりぎりで間に合った。"},
+  {c:"onoma",l:"中級",jp:"すんなり",y:"すんなり",vi:"Trôi chảy, suôn sẻ không vướng mắc",ex:"提案がすんなり通った。"},
+  {c:"onoma",l:"中級",jp:"もやもや",y:"もやもや",vi:"Bứt rứt, mơ hồ khó chịu trong lòng",ex:"結論が出ず、もやもやする。"},
+  {c:"onoma",l:"上級",jp:"なあなあ",y:"なあなあ",vi:"Qua loa cho xong, xuề xòa không rạch ròi",ex:"なあなあで済ませず、責任を明確にしよう。",expl:"Thái độ dĩ hòa vi quý, không làm rõ trách nhiệm/ranh giới. Sắc thái tiêu cực."},
+  {c:"onoma",l:"上級",jp:"ずるずる",y:"ずるずる",vi:"Dây dưa, kéo dài lê thê không dứt điểm",ex:"結論をずるずる先延ばしにする。"},
+  {c:"onoma",l:"上級",jp:"うやむや",y:"うやむや",vi:"Mập mờ, cho chìm xuồng (không kết luận rõ)",ex:"責任の所在がうやむやになった。",expl:"Để vấn đề lửng lơ không giải quyết dứt khoát, thường là cố ý. Phân biệt: なあなあ (thái độ xuề xòa) ↔ うやむや (kết cục mập mờ)."},
+  {c:"onoma",l:"上級",jp:"のらりくらり",y:"のらりくらり",vi:"Ậm ừ né tránh, lảng đi không trả lời thẳng",ex:"のらりくらりと質問をかわす。"},
 ];
 window.VOCAB_DATA.forEach((d,i)=>d.id="p"+i);
