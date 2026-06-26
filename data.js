@@ -27,6 +27,7 @@ window.VOCAB_CATS = {
   keigov:    {jp:"敬語動詞",   vi:"Kính ngữ ĐT"},
   sales:     {jp:"営業・折衝",  vi:"Sales・Đàm phán"},
   finance:   {jp:"経理・数字",  vi:"Tài chính・Số"},
+  advanced:  {jp:"高度表現",   vi:"Cao cấp"},
 };
 
 window.VOCAB_DATA = [
@@ -420,5 +421,37 @@ window.VOCAB_DATA = [
   {c:"finance",l:"中級",jp:"赤字",y:"あかじ",vi:"Thua lỗ (số đỏ, đối nghĩa 黒字)",ex:"赤字を解消する施策が必要だ。",hv:"xích tự"},
   {c:"finance",l:"中級",jp:"決算",y:"けっさん",vi:"Quyết toán (chốt tài chính cuối kỳ)",ex:"3月は決算で忙しい時期です。",hv:"quyết toán"},
   {c:"finance",l:"中級",jp:"四半期",y:"しはんき",vi:"Quý (3 tháng, quarter)",ex:"四半期ごとに業績を報告します。",hv:"tứ bán kỳ"},
+
+  // ---- batch 4: N1 grammar + advanced business expressions ----
+  {c:"grammar",l:"上級",jp:"〜にたえない",y:"〜にたえない",vi:"Không chịu nổi ~; vô cùng ~",ex:"彼の無責任な態度は見るにたえない。",expl:"Hai nghĩa: (1) 動詞辞書形＋にたえない = không nỡ/không chịu nổi (見るにたえない, 聞くにたえない); (2) 名詞cảm xúc＋にたえない = vô cùng, khôn xiết (感謝にたえない, 遺憾にたえない). Văn viết trang trọng."},
+  {c:"grammar",l:"上級",jp:"〜きらいがある",y:"〜きらいがある",vi:"Có xu hướng (thiên về cái không hay)",ex:"彼は物事を悲観的に考えるきらいがある。",expl:"Cách nối: 動詞辞書形／名詞の＋きらいがある. Sắc thái: chỉ khuynh hướng/tật xấu (đánh giá tiêu cực), không dùng cho việc tốt. きらい ở đây nghĩa khuynh hướng, không phải ghét."},
+  {c:"grammar",l:"上級",jp:"〜ともなると",y:"〜ともなると",vi:"Một khi đã đến mức/cương vị ~ thì (đương nhiên khác)",ex:"管理職ともなると、責任も大きくなる。",expl:"Cách nối: 名詞／動詞辞書形＋ともなると(ともなれば). Sắc thái: khi đạt tới mức độ/vị trí cao thì kéo theo điều tương xứng, hàm ý đương nhiên; trang trọng."},
+  {c:"grammar",l:"上級",jp:"〜べく",y:"〜べく",vi:"Để mà ~ (mục đích, văn viết)",ex:"問題を解決すべく、対策を講じた。",expl:"Cách nối: 動詞辞書形＋べく (する→すべく). Nghĩa như 〜ために nhưng văn viết cứng. Biến thể: 〜べくして (tất yếu), 〜べくもない (không thể nào)."},
+  {c:"grammar",l:"上級",jp:"〜んがため",y:"〜んがため",vi:"Vì mục đích ~ (quyết đạt cho được)",ex:"勝たんがために手段を選ばない。",expl:"Cách nối: 動詞ない形(bỏ ない)＋んがため (する→せんがため). Sắc thái: nhằm mục đích mạnh, hơi tiêu cực (bất chấp); văn viết cổ, mạnh hơn 〜ために."},
+  {c:"grammar",l:"上級",jp:"〜とあって",y:"〜とあって",vi:"Vì là ~ (tình huống đặc biệt nên đương nhiên)",ex:"連休とあって、行楽地は大混雑だ。",expl:"Cách nối: 普通形／名詞＋とあって. Sắc thái: vì là tình huống/lý do đặc biệt nên dẫn đến kết quả đương nhiên trong hoàn cảnh đó; văn viết, tin tức. Khác 〜だけあって (xứng với)."},
+  {c:"grammar",l:"上級",jp:"〜たりとも",y:"〜たりとも",vi:"Dù chỉ ~ (cũng không)",ex:"一日たりとも忘れたことはない。",expl:"Cách nối: 一＋[lượng từ]＋たりとも＋phủ định (一円たりとも, 一瞬たりとも). Sắc thái: nhấn mạnh tuyệt đối, dù lượng nhỏ nhất cũng không; văn viết cứng."},
+  {c:"grammar",l:"上級",jp:"〜までもない",y:"〜までもない",vi:"Không cần phải ~ (đến mức đó)",ex:"言うまでもないことだ。",expl:"Cách nối: 動詞辞書形＋までもない. Sắc thái: việc hiển nhiên/nhỏ, không cần làm tới mức đó. Mẫu hay: 言うまでもない (khỏi phải nói), 確認するまでもない."},
+  {c:"grammar",l:"上級",jp:"〜ないまでも",y:"〜ないまでも",vi:"Dù không đến mức ~ thì (ít ra cũng)",ex:"毎日とは言わないまでも、週一は運動したい。",expl:"Cách nối: 動詞ない形／名詞＋ないまでも. Sắc thái: tuy chưa tới mức cao A nhưng ít ra cũng đạt mức B thấp hơn; vế sau nêu mức tối thiểu mong muốn."},
+  {c:"grammar",l:"上級",jp:"〜といえども",y:"〜といえども",vi:"Dù là ~ đi nữa (cũng...)",ex:"専門家といえども、間違うことはある。",expl:"Cách nối: 名詞／普通形＋といえども. Sắc thái: dù là điều/người tưởng là ngoại lệ thì vẫn không thoát quy luật; nghĩa như 〜でも nhưng cứng hơn nhiều, văn viết."},
+  {c:"grammar",l:"上級",jp:"〜はおろか",y:"〜はおろか",vi:"Đừng nói ~, đến cả... (cũng)",ex:"漢字はおろか、ひらがなも書けない。",expl:"Cách nối: 名詞＋はおろか＋(も/さえ/すら). Sắc thái: A (mức cao/cơ bản) khỏi bàn, đến cả B mức thấp hơn cũng (thường phủ định); nhấn mạnh. Vế sau hay có も/すら/さえ."},
+  {c:"grammar",l:"上級",jp:"〜もさることながら",y:"〜もさることながら",vi:"~ đã đành (đáng kể), nhưng còn...",ex:"味もさることながら、見た目も素晴らしい。",expl:"Cách nối: 名詞＋もさることながら. Sắc thái: A đã đáng nói rồi, nhưng B nêu sau còn đáng chú ý hơn hoặc cũng vậy; trang trọng, nhấn vào vế sau."},
+  {c:"grammar",l:"上級",jp:"〜にもまして",y:"〜にもまして",vi:"Hơn cả ~ (so với trước/cái khác)",ex:"以前にもまして忙しくなった。",expl:"Cách nối: 名詞＋にもまして (疑問詞＋にもまして: 何にもまして). Sắc thái: mức độ vượt hơn cả cái mốc vốn đã cao trước đó; trang trọng. 何にもまして = hơn bất cứ gì."},
+  {c:"grammar",l:"上級",jp:"〜ならではの",y:"〜ならではの",vi:"Chỉ ~ mới có (đặc trưng riêng, nghĩa khen)",ex:"この店ならではの味だ。",expl:"Cách nối: 名詞＋ならでは(の). Sắc thái: chỉ riêng A mới làm được/mới có, mang nghĩa khen ngợi nét độc đáo. Hay trong quảng cáo, đánh giá."},
+  {c:"grammar",l:"上級",jp:"〜を禁じ得ない",y:"〜をきんじえない",vi:"Không kìm được (cảm xúc)",ex:"被災地の惨状に同情の念を禁じ得ない。",hv:"cấm đắc",expl:"Cách nối: 名詞cảm xúc＋を禁じ得ない (怒り/涙/驚き). Sắc thái: không nén nổi cảm xúc trào lên; trang trọng, văn viết. 禁じ得ない = cấm đắc (không cấm được). Chủ thể thường là người nói."},
+  {c:"advanced",l:"上級",jp:"ご査収ください",y:"ごさしゅうください",vi:"Xin vui lòng kiểm tra và nhận (tài liệu đính kèm)",ex:"資料を添付いたしました。ご査収ください。",hv:"tra thu",expl:"Dùng khi gửi tài liệu/đính kèm, nhờ đối phương kiểm rồi nhận. Chuẩn mail công sở. 査収 = tra thu (kiểm rồi nhận). Trang trọng hơn: ご査収のほどよろしくお願いいたします."},
+  {c:"advanced",l:"上級",jp:"お含みおきください",y:"おふくみおきください",vi:"Xin lưu ý/ghi nhớ trước giúp (báo nhẹ điều cần biết)",ex:"変更の可能性がある旨、お含みおきください。",hv:"hàm",expl:"Báo trước một điều để đối phương ghi nhớ trong đầu, nhẹ hơn ご了承ください (không đòi sự chấp thuận). 含み = hàm ý, ngụ ý."},
+  {c:"advanced",l:"上級",jp:"ご放念ください",y:"ごほうねんください",vi:"Xin đừng bận tâm (bảo người kia khỏi lo việc gì)",ex:"先ほどの件はご放念ください。",hv:"phóng niệm",expl:"Bảo đối phương quên/đừng để tâm chuyện vừa nêu (vd gửi nhầm, không cần xử lý). 放念 = phóng niệm (buông cái lo). Lịch sự, văn viết."},
+  {c:"advanced",l:"上級",jp:"幸甚に存じます",y:"こうじんにぞんじます",vi:"Tôi lấy làm vinh hạnh/rất biết ơn (cực trang trọng)",ex:"ご検討いただければ幸甚に存じます。",hv:"hạnh thậm tồn",expl:"Cách nói biết ơn/vui mừng ở mức rất cao, trên cả 幸いです. Dùng với khách hoặc cấp rất cao. 幸甚 = hạnh thậm (may mắn tột bậc)."},
+  {c:"advanced",l:"上級",jp:"ご足労おかけしますが",y:"ごそくろうおかけしますが",vi:"Phiền ngài phải đi lại vất vả (khi mời ai đến)",ex:"ご足労おかけしますが、弊社までお越しください。",hv:"túc lao",expl:"Lời cáo lỗi khi bắt đối phương phải di chuyển tới tận nơi. 足労 = túc lao (nhọc chân). Đi cặp với お越しください／お運びください."},
+  {c:"advanced",l:"上級",jp:"お力添えいただけますと幸いです",y:"おちからぞえいただけますとさいわいです",vi:"Mong nhận được sự giúp sức của ngài",ex:"本件、お力添えいただけますと幸いです。",hv:"lực thiêm",expl:"Nhờ vả sự hỗ trợ một cách khiêm tốn, lịch sự. 力添え = lực thiêm (góp sức). Mềm hơn ご協力ください."},
+  {c:"advanced",l:"上級",jp:"ご尽力いただき",y:"ごじんりょくいただき",vi:"Cảm ơn ngài đã dốc sức/cống hiến",ex:"平素より格別のご尽力を賜り、御礼申し上げます。",hv:"tận lực",expl:"Ghi nhận/cảm ơn ai đã nỗ lực hết mình vì việc gì. 尽力 = tận lực. Thường đi với 賜る／いただく."},
+  {c:"advanced",l:"上級",jp:"ご高配を賜り",y:"ごこうはいをたまわり",vi:"Nhờ ngài quan tâm chiếu cố (cảm ơn sự ưu ái của bề trên)",ex:"平素は格別のご高配を賜り、誠にありがとうございます。",hv:"cao phối",expl:"Mẫu mở đầu thư trang trọng, cảm ơn sự quan tâm/ưu ái. 高配 = cao phối (chiếu cố từ trên). Cố định đầu thư doanh nghiệp."},
+  {c:"advanced",l:"上級",jp:"ご指導ご鞭撻のほど",y:"ごしどうごべんたつのほど",vi:"Mong tiếp tục chỉ bảo, rèn giũa (lời chào kết)",ex:"今後ともご指導ご鞭撻のほど、よろしくお願い申し上げます。",hv:"chỉ đạo tiên thát",expl:"Mẫu chào kết trang trọng (chào hỏi, năm mới, nhậm chức). 鞭撻 = tiên thát (roi vọt → thúc giục dạy dỗ). Luôn đi với ご指導."},
+  {c:"advanced",l:"上級",jp:"お手すきの際に",y:"おてすきのさいに",vi:"Khi ngài rảnh tay (nhờ việc không gấp)",ex:"お手すきの際に、ご確認いただけますでしょうか。",hv:"thủ tế",expl:"Nhờ làm việc gì lúc đối phương rảnh, không thúc ép. 手すき = rảnh tay, 際 = tế (lúc). Giảm áp lực cho người nhận."},
+  {c:"advanced",l:"上級",jp:"〜の段、お詫び申し上げます",y:"〜のだん、おわびもうしあげます",vi:"Về việc ~, tôi xin lỗi (văn xin lỗi trang trọng)",ex:"ご連絡が遅れました段、お詫び申し上げます。",hv:"đoạn",expl:"段 = đoạn, chỉ việc/điểm vừa nêu; dùng trong xin lỗi/cảm ơn rất trang trọng (お礼の段, お詫びの段). Văn viết cứng."},
+  {c:"advanced",l:"上級",jp:"ご笑納ください",y:"ごしょうのうください",vi:"Xin nhận chút quà mọn (khiêm nhường khi tặng)",ex:"心ばかりの品ですが、ご笑納ください。",hv:"tiếu nạp",expl:"Khi tặng quà, khiêm tốn bảo đối phương cười mà nhận. 笑納 = tiếu nạp (cười nhận). Chỉ dùng khi chính mình tặng."},
+  {c:"advanced",l:"上級",jp:"取り急ぎご報告まで",y:"とりいそぎごほうこくまで",vi:"Vội báo nhanh (câu kết mail báo gấp)",ex:"詳細は追ってご連絡します。取り急ぎご報告まで。",hv:"thủ cấp báo cáo",expl:"Kết mail khi cần báo gấp, chưa đầy đủ. 取り急ぎ = vội làm trước. Biến thể: 取り急ぎお礼まで／ご連絡まで. Tránh dùng với cấp rất cao (hơi cụt)."},
+  {c:"advanced",l:"上級",jp:"ご多忙のところ恐縮ですが",y:"ごたぼうのところきょうしゅくですが",vi:"Phiền ngài đang bận, tôi rất ngại nhưng... (mở lời nhờ)",ex:"ご多忙のところ恐縮ですが、ご返信いただけますと幸いです。",hv:"đa mang khủng súc",expl:"Cushion mở đầu lời nhờ, ghi nhận đối phương bận. 恐縮 = khủng súc (ngại quá). Đồng nghĩa お忙しいところ恐れ入りますが."},
+  {c:"advanced",l:"上級",jp:"何卒よろしくお願い申し上げます",y:"なにとぞよろしくおねがいもうしあげます",vi:"Kính mong ngài giúp đỡ (câu kết cực trang trọng)",ex:"今後とも何卒よろしくお願い申し上げます。",hv:"hà tốt nguyện thân thượng",expl:"Câu kết mail trang trọng nhất trong các biến thể của よろしくお願いします. 何卒 = hà tốt (khẩn thiết mong). Nâng cấp: 〜賜りますようお願い申し上げます."},
 ];
 window.VOCAB_DATA.forEach((d,i)=>d.id="p"+i);

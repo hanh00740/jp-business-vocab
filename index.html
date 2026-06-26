@@ -173,6 +173,11 @@
         <button data-lv="中級" aria-pressed="false">中級</button>
         <button data-lv="上級" aria-pressed="false">上級</button>
       </div>
+      <div class="seg small" role="group" aria-label="Trạng thái thuộc">
+        <button data-lf="all" aria-pressed="true">Tất cả</button>
+        <button data-lf="yes" aria-pressed="false">✓ Thuộc</button>
+        <button data-lf="no" aria-pressed="false">Chưa</button>
+      </div>
       <div class="search">
         <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"></circle><path d="m21 21-4-4"></path></svg>
         <input id="search" type="text" placeholder="Tìm 表現, đọc, hoặc nghĩa…" autocomplete="off">
@@ -223,7 +228,7 @@ function lsSet(k,v){ try{localStorage.setItem(k,JSON.stringify(v));}catch(e){} }
 
 let learned = new Set(lsGet(LS_LEARNED,[]));
 let custom = lsGet(LS_CUSTOM,[]);   // [{id,c,l,jp,y,vi,ex,n,custom:true}]
-const state={cat:"all",lv:"all",q:"",mode:"list",dir:"jp2vi",deck:[],idx:0,flipped:false};
+const state={cat:"all",lv:"all",lf:"all",q:"",mode:"list",dir:"jp2vi",deck:[],idx:0,flipped:false};
 
 function allData(){ return BUILTIN.concat(custom); }
 const $=s=>document.querySelector(s);
@@ -235,6 +240,8 @@ function filtered(){
   return allData().filter(d=>{
     if(state.cat!=="all"&&d.c!==state.cat)return false;
     if(state.lv!=="all"&&d.l!==state.lv)return false;
+    if(state.lf==="yes"&&!learned.has(d.id))return false;
+    if(state.lf==="no"&&learned.has(d.id))return false;
     if(q&&!((d.jp||"").toLowerCase().includes(q)||(d.y||"").toLowerCase().includes(q)||(d.vi||"").toLowerCase().includes(q)))return false;
     return true;
   });
@@ -253,7 +260,7 @@ function renderCats(){
 }
 function renderList(){
   const items=filtered();
-  $("#countLine").textContent=items.length+" mục"+(state.cat!=="all"?" · "+CATS[state.cat].vi:"")+(state.lv!=="all"?" · "+state.lv:"");
+  $("#countLine").textContent=items.length+" mục"+(state.cat!=="all"?" · "+CATS[state.cat].vi:"")+(state.lv!=="all"?" · "+state.lv:"")+(state.lf!=="all"?" · "+(state.lf==="yes"?"đã thuộc":"chưa thuộc"):"");
   if(!items.length){$("#list").innerHTML=`<div class="empty">Không có mục nào khớp bộ lọc.</div>`;return;}
   $("#list").innerHTML=items.map(d=>{
     const done=learned.has(d.id);const lvClass=d.l==="中級"?"lv-mid":"";
@@ -357,6 +364,7 @@ $("#backupBtn").onclick=()=>{
 $("#mList").onclick=()=>setMode("list");
 $("#mFlash").onclick=()=>setMode("flash");
 document.querySelectorAll("[data-lv]").forEach(b=>b.onclick=()=>{state.lv=b.dataset.lv;document.querySelectorAll("[data-lv]").forEach(x=>x.setAttribute("aria-pressed",x.dataset.lv===state.lv));render();});
+document.querySelectorAll("[data-lf]").forEach(b=>b.onclick=()=>{state.lf=b.dataset.lf;document.querySelectorAll("[data-lf]").forEach(x=>x.setAttribute("aria-pressed",x.dataset.lf===state.lf));render();});
 $("#search").oninput=e=>{state.q=e.target.value;if(state.mode==="list")renderList();};
 $("#resetBtn").onclick=()=>{if(confirm("Xóa toàn bộ tiến độ đã thuộc?")){learned=new Set();lsSet(LS_LEARNED,[]);updateProgress();render();}};
 
